@@ -39,3 +39,7 @@ function greeting(){
 hello();
 greeting();
 
+let Name = "Abhishek Das";
+let greet = "Good Morning `$Name`";
+
+console.log(greet);
