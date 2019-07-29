@@ -3,26 +3,26 @@ const emails = ['abhishek@gmail.com','abhi@gmail.com'];
 //console.log(emails.push('das.a@gmail.com'));
 //console.log(emails);
 
-// let limit = 10;
+let letLimit = 10;
 
-// {
-//     //local scope
-//     let limit = 100;
-//     console.log(limit);
-// }
-// //global scope
-// console.log(limit);
+{
+    //local scope
+    let letLimit = 100;
+    console.log(letLimit);
+}
+//global scope
+console.log(letLimit);
 
 
 // Here in the var keyword limit is not blocked scope
-// var limit = 10;
+var varLimit = 10;
 
-// {
-//     var limit = 100;
-//     console.log(limit);
-// }
+{
+    var varLimit = 100;
+    console.log(varLimit);
+}
 
-// console.log(limit);
+console.log(varLimit);
 
 var message;
 
@@ -71,3 +71,19 @@ console.log(lion,bird);
 let king = {name:"Mufasa",kids:9};
 let {name,kids} = king;
 console.log(name,kids);
+
+// String Manipulation and Number Checking
+
+let str = "butterfly";
+
+console.log(str.startsWith("butter"));
+console.log(str.endsWith("fly"));
+console.log(str.includes("cat"));
+
+import {fellowship, total} from './fellowship';
+console.log(fellowship);
+console.log(total);
+
+import {add, multiply} from './math';
+console.log(add(10,5));
+console.log(multiply(10,5));
