@@ -72,6 +72,12 @@ let king = {name:"Mufasa",kids:9};
 let {name,kids} = king;
 console.log(name,kids);
 
+//Destructing objects
+let son = {name:'Simba',parents:2};
+let name1, parents;
+({name1, parents} = son);
+console.log(name1,parents);
+
 // String Manipulation and Number Checking
 
 let str = "butterfly";
@@ -84,16 +90,6 @@ import {fellowship, total} from './fellowship';
 console.log(fellowship);
 console.log(total);
 
-console.log(greet);
-
-
-
-//Destructing objects
-let son = {name:'Simba',parents:2};
-let name, parents;
-({name, parents} = son);
-console.log(name,parents);
-
 //Function
 
 //Function Declaration
@@ -105,12 +101,12 @@ function cheer(){
 cheer();
 
 //Function Expression
-var cheer = function (){
+var cheerExp = function (){
     console.log("WhooHoo! Exp");
 }
 
 //Function Call
-cheer();
+cheerExp();
 
 
 //Anonymous Function
@@ -161,3 +157,4 @@ console.log(highsScoresShort);
 import {add, multiply} from './math';
 console.log(add(10,5));
 console.log(multiply(10,5));
+
