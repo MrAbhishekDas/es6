@@ -86,10 +86,6 @@ console.log(str.startsWith("butter"));
 console.log(str.endsWith("fly"));
 console.log(str.includes("cat"));
 
-import {fellowship, total} from './fellowship';
-console.log(fellowship);
-console.log(total);
-
 //Function
 
 //Function Declaration
@@ -154,7 +150,28 @@ console.log(highsScores);
 let highsScoresShort = points.filter((n) => n>15);
 
 console.log(highsScoresShort);
-import {add, multiply} from './math';
-console.log(add(10,5));
+
+//Modules
+
+/*Modules refer to reusable pieces of code within an application. Most often, 
+they exist independently within separate files, 
+which come in handy when having to split up a large application.*/
+
+/*The export keyword sends primitive values, objects, or functions from one module to another.*/
+
+/*The import keyword receives primitive values, objects, or functions from another module.*/
+
+//import {add, multiply} from './math';
+//console.log(add(10,5));
 console.log(multiply(10,5));
 
+import {fellowship, total} from './fellowship';
+console.log(fellowship);
+console.log(total);
+
+//Here we no need to use the multiply within curly braces {} since we have used default keyword in math.js
+
+/*Using the default keyword gives a module a fallback function when exporting multiple values and methods.*/
+
+import multiply from './math';
+console.log(multiply(3,4));
