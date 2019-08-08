@@ -175,3 +175,22 @@ console.log(total);
 
 import multiply from './math';
 console.log(multiply(3,4));
+
+//Closures in ES6
+
+const mul = (x) => {
+    return (y) => {
+        console.log("x is " + x);
+        return y*x;
+    }
+}
+
+let mulData = mul(8);
+console.log("Closures: "+ mulData);
+console.log("Closures: "+ mulData(3));
+
+const mult = x => y => y*x;
+let m = mult(7);
+
+console.log("hello "+m);
+console.log(m(4));
