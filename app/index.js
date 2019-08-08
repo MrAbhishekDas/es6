@@ -194,3 +194,86 @@ let m = mult(7);
 
 console.log("hello "+m);
 console.log(m(4));
+
+//Classes in Javascript
+/*Here the animal class can be moved to a seperate file and then export it*/
+class Animal {
+    constructor(name,height){
+        this.name=name;
+        this.height=height;
+    }
+
+    hello(){
+        return `I'm ${this.name} and my height is ${this.height}`;
+    }
+}
+
+let lionKing = new Animal("Mufasa",3);
+console.log(lionKing);
+console.log(lionKing.hello());
+
+/*Inheriting classes*/
+class Tiger extends Animal {
+    constructor(name,height,place){
+        super(name,height);
+        this.place=place;
+    }
+
+    hello(){
+        return `I'm ${this.name}, my height is ${this.height} and my place is ${this.place}`;
+    }
+}
+
+let tigerSon = new Tiger("Sourav",4,"Bengal");
+console.log(tigerSon);
+console.log(tigerSon.hello());
+
+//static classes
+
+class Calculation {
+    static mul(a,b) {
+        return a*b;
+    }
+}
+
+console.log("Static Method " + Calculation.mul(3,2));
+
+//Data Structure in JS
+//The Set - This stores only unique value
+
+let setArray = ['4','5','9'];
+let setData = new Set(setArray);
+console.log(setData);
+
+let mapObj = new Map();
+let key_1 = "String Key";
+mapObj.set(key_1,"Value for String");
+
+let key_2 = {a:"key"};
+mapObj.set(key_2,"Value for Object");
+
+let key_3 = function () {
+    console.log("In Map Func");
+};
+mapObj.set(key_3,"Value for func");
+
+console.log(mapObj);
+console.log(mapObj.size);
+console.log(mapObj.values(key_3));//Find all the method here
+
+//Counting the letters in thestring via map
+
+let string = 'superaaaaaacalifragilisticexpialidocious';
+
+let letters = new Map();
+for (let i=0; i<string.length; i++) {
+    let letter = string[i];
+    if (!letters.has(letter)) {
+        letters.set(letter, 1);
+    } else {
+        letters.set(letter, letters.get(letter) + 1);
+    }
+}
+console.log(letters);
+
+
