@@ -12,6 +12,15 @@ npm i webpack-dev-server@3.1.4 --save-dev
 
 npm i babel-core@6.26.3 babel-loader@7.1.4 babel-preset-env@1.7.0 --save-dev
 
+#Issues Faced
+
+If the Server is not exited properly
+
+Find process id -
+
+    ~ Windows - >netstat -aon | findstr 3000
+    ~ Kill the porcess > taskkill /pid 8884
+
 #Notes
 
 Methods and Modules | Section Overview

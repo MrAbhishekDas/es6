@@ -107,13 +107,13 @@ cheerExp();
 
 //Anonymous Function
 
-setTimeout(function() {
-    console.log("In Annonymous Function")},3000
-)
+// setTimeout(function() {
+//     console.log("In Annonymous Function")},
+//     3000);
 
-//Converting to Arrow function
+// //Converting to Arrow function
 
-setTimeout( () => console.log("In Arrow Fuction"),5000);
+// setTimeout( () => console.log("In Arrow Fuction"),5000);
 
 //Helper Method(Map)
 
@@ -175,25 +175,6 @@ console.log(total);
 
 import multiply from './math';
 console.log(multiply(3,4));
-
-//Closures in ES6
-
-const mul = (x) => {
-    return (y) => {
-        console.log("x is " + x);
-        return y*x;
-    }
-}
-
-let mulData = mul(8);
-console.log("Closures: "+ mulData);
-console.log("Closures: "+ mulData(3));
-
-const mult = x => y => y*x;
-let m = mult(7);
-
-console.log("hello "+m);
-console.log(m(4));
 
 //Classes in Javascript
 /*Here the animal class can be moved to a seperate file and then export it*/
@@ -276,4 +257,102 @@ for (let i=0; i<string.length; i++) {
 }
 console.log(letters);
 
+//Closures
 
+let call = () => {
+    let secret = 'ES6 Rocks!';
+    let reveal = () => {
+        console.log(secret);
+    }
+    reveal();
+}
+
+//console.log(secret); //Here is secret is undefined
+call();
+
+//Function factories
+const addSuffix = (x) => {
+    const concat = (y) => {
+        return y+x;
+    }
+    return concat;
+}
+
+let add_ness = addSuffix("ness");
+console.log(add_ness);
+let h = add_ness("happi");
+console.log(h);
+
+const multiplyFuncFactories = (x) => {
+    return (y) => {
+        console.log("x is " + x);
+        return y*x;
+    }
+}
+
+let mulData = multiplyFuncFactories(8);
+console.log("Closures: "+ mulData);
+console.log("Closures: "+ mulData(3));
+
+//shortening it
+
+const mult = x => y => y*x;
+let m = mult(7);
+
+console.log("sortening fuction factories "+m);
+console.log(m(4));
+
+//Generators
+
+function* letterMaker() {
+    // let count = 0;
+    // while(count < 3) {
+        yield 'a';
+        yield 'b';
+        yield 'c';
+        
+    //}
+}
+
+let letterGen = letterMaker();
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+
+function* countMaker() {
+    let count = 0;
+    while(count < 3) {
+        yield count +=1;
+    }
+}
+
+let countGen = countMaker();
+console.log(countGen.next().value);
+console.log(countGen.next().value);
+console.log(countGen.next().value);
+console.log(countGen.next().value);
+
+function* evens() {
+    let count = 0;
+    while(true) {
+        count +=2;
+        console.log("Before Yield");
+        let reset = yield count;
+        console.log(reset);
+        if(reset){
+            count = 0;
+        }
+        console.log("After if")
+    }
+}
+
+let sequence = evens();
+console.log("Generators");
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+
+console.log("Value Reset");
+console.log(sequence.next(true).value);// Need to explore more
+console.log(sequence.next().value);
