@@ -375,6 +375,7 @@ console.log(it.next().value);
 
 let p = new Promise((resolve, reject) => {
     //lets say Below is the data received from Rest Apis
+    //whichever data is it receives it proceses it as we will receive either of the data
     setTimeout(() => {
         resolve("Resolved Promise Data");
         reject("Rejected Promise Data");
@@ -382,4 +383,23 @@ let p = new Promise((resolve, reject) => {
 });
 
 p.then(response => console.log(response))
+ .catch(error => console.log(error));
+
+ //Implementing the promise
+
+ const restApiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+ fetch(restApiUrl, {method: "GET"})
+ .then(response => response.json()) /*here we are returning the response data in the form of respose.json*/
+ .then(json => console.log(json))
+ .catch(error => console.log(error));
+
+ //example of google apis
+
+ 
+ const restApiUrlGoogle = 'https://www.googleapis.com./books/v1/volumes?q=isbn:0747532699';
+
+ fetch(restApiUrlGoogle, {method: "GET"})
+ .then(response => response.json()) /*here we are returning the response data in the form of respose.json*/
+ .then(json => console.log(json))
  .catch(error => console.log(error));
