@@ -356,3 +356,30 @@ console.log(sequence.next().value);
 console.log("Value Reset");
 console.log(sequence.next(true).value);// Need to explore more
 console.log(sequence.next().value);
+
+// Iterators
+console.log("Iterators");
+
+function* arrayIterator() {
+    yield* arguments;
+}
+
+let it = arrayIterator(1,2,3);
+//console.log(it.next()); // Has two parameters value and done
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
+
+//Promise
+
+let p = new Promise((resolve, reject) => {
+    //lets say Below is the data received from Rest Apis
+    setTimeout(() => {
+        resolve("Resolved Promise Data");
+        reject("Rejected Promise Data");
+    },5000);
+});
+
+p.then(response => console.log(response))
+ .catch(error => console.log(error));
