@@ -1,5 +1,9 @@
 # es6
 
+#Setting up the project
+
+npm init -y //To Skip Interactive questions
+
 #Commands for actual js lib and webpack on cmd line but change package.json file "scripts": "start":"webpack --mode development"
 
 npm i webpack@4.12.0 webpack-cli@3.0.3 --save-dev
