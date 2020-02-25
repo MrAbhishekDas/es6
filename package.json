@@ -14,9 +14,9 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.41.5",
+    "webpack": "^4.41.6",
     "webpack-cli": "^3.0.3",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "sample.js": "^1.0.0",
