@@ -2,6 +2,15 @@
 
 #Setting up the project
 
+#Prerequisite 
+
+npm and angular cli
+
+Install Globally
+npm install -g @angular/cli
+Install Locally
+npm install @angular/cli
+
 npm init -y //To Skip Interactive questions
 
 #Commands for actual js lib and webpack on cmd line but change package.json file "scripts": "start":"webpack --mode development"
@@ -24,6 +33,8 @@ Find process id -
 
     ~ Windows - >netstat -aon | findstr 3000
     ~ Kill the porcess > taskkill /pid 8884
+
+#npm start 
 
 #Notes
 
